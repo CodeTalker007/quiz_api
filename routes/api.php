@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post("quizzes", [\App\Http\Controllers\Api\QuizController::class, "store"]);
+Route::post("quizzes/{quiz}/attempt", [\App\Http\Controllers\Api\QuizController::class, "attempt"]);
